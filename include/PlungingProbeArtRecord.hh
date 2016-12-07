@@ -27,7 +27,23 @@ namespace gm2field {
       double freq_err;               // frequency uncertainty in Hz 
       double freq_zc;                // frequency in Hz [zero crossing]      
       double freq_zc_err;            // frequency uncertainty in Hz [zero crossing] 
-   };  
+
+      // default constructor 
+      PlungingProbeArtRecord() : 
+	sys_clock(0), 
+	gps_clock(0), 
+        health(0x0000), 
+        method(0x0000), 
+        x(0),
+        y(0),
+        z(0),
+        temperature(0),
+        freq(0),
+        freq_err(0),
+        freq_zc(0),
+        freq_zc_err(0) {} 
+
+   }; // end of PlungingProbeArtRecord  
 
    // data product that keeps traces 
    struct PlungingProbeFidArtRecord : public PlungingProbeArtRecord { 
